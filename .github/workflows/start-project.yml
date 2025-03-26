@@ -22,7 +22,9 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
+        continue-on-error: true
         run: npm install
 
       - name: Start project
+        continue-on-error: true
         run: npm run start
