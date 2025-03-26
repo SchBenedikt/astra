@@ -51,6 +51,15 @@ yarn start
 ```
 This will start the server and open the application in your default web browser.
 
+### Starting the Project with GitHub Actions
+
+To start the project using GitHub Actions, follow these steps:
+
+1. Ensure you have a GitHub repository set up for your project.
+2. Add the provided GitHub Actions workflow file (`.github/workflows/start-project.yml`) to your repository.
+3. Push the changes to your GitHub repository.
+4. The GitHub Actions workflow will automatically start the project using the `npm run start` command.
+
 ### Building the Project
 
 To build the project for production, run:
