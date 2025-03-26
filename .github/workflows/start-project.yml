@@ -27,4 +27,4 @@ jobs:
 
       - name: Start project
         continue-on-error: true
-        run: npm run start
+        run: npm run dev
