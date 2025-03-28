@@ -39,17 +39,6 @@ builtInPlugins['todo'] = todoPlugin;
 builtInPlugins['openWebsite'] = openWebsitePlugin;
 builtInPlugins['clock'] = clockPlugin;
 
-// Versuche, das Stoppuhr-Plugin zu laden, falls es existiert
-// Diese Methode würde in einer echten Implementierung Teil des automatischen Plugin-Discovery sein
-try {
-  const stopwatchPlugin = require('../../../plugins/stopwatch').default;
-  if (stopwatchPlugin) {
-    builtInPlugins['stopwatch'] = stopwatchPlugin;
-  }
-} catch (e) {
-  console.log('Stopwatch plugin not available:', e);
-}
-
 // Dynamic registry that can be updated at runtime
 let dynamicPlugins: Record<string, Plugin> = {};
 
