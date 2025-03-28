@@ -14,17 +14,22 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
-        continue-on-error: true
         run: npm install
 
-      - name: Start project
-        continue-on-error: true
-        run: npm run start
+      - name: Build project
+        run: npm run build
+
+      - name: Start project (Background)
+        run: npm start &
+      
+      - name: Wait for server to start
+        run: npx wait-on http://localhost:3000
